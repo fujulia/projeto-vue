@@ -57,8 +57,8 @@ export default{
   <div id="contadorBloco">
   <p>Valor do contador: {{ contador }}</p>
   <div id="buttonsValores">
-    <button @click="incrementarContador()">+</button>
-    <button @click="decrementarContador()">-</button>
+    <button id="buttonVerde" @click="incrementarContador()">+</button>
+    <button id="buttonVermelho" @click="decrementarContador()">-</button>
   </div>
  
   <button id="buttonZerar" @click="zerarContador()">Zerar</button>
@@ -68,10 +68,11 @@ export default{
 </template>
 
 <style scoped>
+
   
   button {
   font-weight: bold;
-  
+  border: none;
 }
   p{
     text-align: center;
@@ -79,14 +80,14 @@ export default{
   }
 
   #contadorBloco{
-    border: 1px solid;
+    border: 1px solid rgb(170, 198, 230);
     width: 300px;
     margin: auto;
+    background-color: rgb(203, 225, 231);
   }
 
   div #buttonsValores{
     width: 80px;
-    border: 1px solid;
     margin: auto;
   }
 
@@ -103,13 +104,30 @@ export default{
     position: relative;
     margin: 5px;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   #buttonZerar button{
     text-align: center;
   }
 
+  #buttonZerar:hover {
+    background-color: red; 
+    transition: 0.4s;
+    opacity: 0.7;
+    color: white;
+}
 
+  #buttonVerde{
+    background-color: rgb(79, 216, 45);
+  }
+
+  #buttonVerde:hover, #buttonVermelho:hover{
+    opacity: 0.7;
+  }
+
+  #buttonVermelho{
+    background-color: rgb(255, 113, 113);
+  }
 
 </style>
